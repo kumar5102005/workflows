@@ -28,8 +28,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         env:
-          App: RenEase
-        run: echo $APP
+          Name: RenEase
+        run: echo $Name
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
