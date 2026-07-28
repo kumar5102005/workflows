@@ -1,6 +1,6 @@
 name: Expressions and Contexts
 on: [push, pull_request]
-run-name: expressions and context by @${{ github.actor}}
+run-name: expressions and context by @${{ github.actor}} ${{ github.event_name}}
 
 jobs:
   Expressions:
