@@ -1,0 +1,12 @@
+name: Expressions and Contexts
+on: [push, pull_request, issuse]
+
+jobs:
+  Expressions:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Expressions
+      run: |
+        echo ${{ 1 }}
+        echo ${{ 1>2 }}
+        echo ${{ 4 || 5}}
