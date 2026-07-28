@@ -1,5 +1,6 @@
 name: Expressions and Contexts
 on: [push, pull_request]
+run-name: expressions and context by @${{ github.actor}}
 
 jobs:
   Expressions:
@@ -13,4 +14,4 @@ jobs:
     
     - name: Contexts
       run: |
-        echo ${{ toJson(github) }}
+        echo '${{ toJson(github) }}'
