@@ -10,3 +10,7 @@ jobs:
         echo ${{ 1 }}
         echo ${{ 1>2 }}
         echo ${{ 4 || 5}}
+    
+    - name: Contexts
+      run: |
+        echo ${{ toJson(github) }}
