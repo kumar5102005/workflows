@@ -1,5 +1,5 @@
 name: Expressions and Contexts
-on: [push, pull_request, issuse]
+on: [push, pull_request]
 
 jobs:
   Expressions:
