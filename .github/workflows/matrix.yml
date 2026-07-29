@@ -22,7 +22,7 @@ jobs:
                   experimental: true
             exclude:
               - os: ubuntu-latest
-                experimental: true
+                
             
         steps:
         - run: echo '${{ toJson(matrix)}}'
