@@ -17,7 +17,12 @@ jobs:
                 - os: ubuntu-latest
                   experimental: false
                   is-ubuntu: true
-              
+                - os: ubuntu-latest
+                  node-version: 15
+                  experimental: true
+            exclude:
+              - os: ubuntu-latest
+                experimental: true
             
         steps:
         - run: echo '${{ toJson(matrix)}}'
