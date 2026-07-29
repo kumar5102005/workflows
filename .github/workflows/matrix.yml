@@ -6,10 +6,20 @@ jobs:
     matrix_stragety:
         runs-on: ubuntu-latest
         strategy:
-            matrix:
-                os: [ubuntu-latest, windows-latest]
-                node-version: [14,15,16]
+          matrix:
+            os: [ubuntu-latest, windows-latest]
+            node-version: [14,15,16]
+            include:
+                - os: ubuntu-latest
+                  experimental : true
+                - os: macos-latest
+                  node-version: 15
+                - os: ubuntu-latest
+                  experimental: false
+                  is-ubuntu: true
+              
             
         steps:
+        - run: echo '${{ toJson(matrix)}}'
         - run: echo ${{ matrix.os }}
         - run: echo ${{ matrix.node-version }}
