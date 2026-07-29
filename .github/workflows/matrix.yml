@@ -1,0 +1,15 @@
+name: matrix stragety
+on:
+    push
+
+jobs:
+    matrix_stragety:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                os: [ubuntu-latest, windows-latest]
+                node-version: [14,15,16]
+            
+        steps:
+        - run: echo ${{ matrix.os }}
+        - run: echo ${{ matrix.node-version }}
