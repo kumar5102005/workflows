@@ -1,22 +1,23 @@
-name: caller workflow
-on: 
-    workflow_dispatch: 
-      inputs:
-        name:
-          description: "name description"
-          type: string
-          default: "phani"
+# name: caller workflow
+# on: 
+#     workflow_dispatch: 
+#       inputs:
+#         name:
+#           description: "name description"
+#           type: string
+#           default: "phani"
 
-jobs:
-  calling-reuseable-wf:
-    uses: ./.github/workflows/reuseable-wf.yaml
-    with:
-      name: ${{ inputs.name }}
-    secrets:
-      access-token: ${{ secrets.GITHUB_TOKEN }}
-  wf-output:
-    needs: calling-reuseable-wf
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo ${{ needs.calling-reuseable-wf.outputs.output }}
+# jobs:
+#   calling-reuseable-wf:
+#     runs-on: ubuntu
+  #   uses: ./.github/workflows/reuseable-wf.yaml
+  #   with:
+  #     name: ${{ inputs.name }}
+  #   secrets:
+  #     access-token: ${{ secrets.GITHUB_TOKEN }}
+  # wf-output:
+  #   needs: calling-reuseable-wf
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - run: echo ${{ needs.calling-reuseable-wf.outputs.output }}
 
