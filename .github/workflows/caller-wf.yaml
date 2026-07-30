@@ -12,4 +12,5 @@ jobs:
     uses: ./.github/workflows/reuseable-wf.yaml
     with:
       name: ${{ inputs.name }}
-    secrets: inherit
+    secrets:
+      access-token: ${{ secrets.GITHUB_TOKEN }}
