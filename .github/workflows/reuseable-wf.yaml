@@ -1,0 +1,22 @@
+name: reuseable workflow
+on:
+    workflow_call:
+        inputs:
+          name:
+            description: "name description"
+            default: "Ali"
+            required: true
+            type: string
+        secrets:
+          access-token:
+            description: "sercets access token"
+            required: true 
+
+jobs:
+  called-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo the given inputs
+        run: echo "${{ inputs.name }}"
+      - name: echo sercets
+        run: echo "${{ secrets.access-token }}"
