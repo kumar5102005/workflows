@@ -28,4 +28,4 @@ jobs:
         run: echo "${{ secrets.access-token }}"
       - name: output step
         id: step-3
-        run: echo 'branch=${{github.action_ref}}' >> $GITHUB_OUTPUT
+        run: echo 'branch=${{github.action_repository}}' >> $GITHUB_OUTPUT
