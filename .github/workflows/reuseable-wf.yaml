@@ -20,7 +20,7 @@ jobs:
   called-workflow:
     runs-on: ubuntu-latest
     outputs:
-      output: ${{ steps.step-3.outputs.data }}
+      output: ${{ steps.step-3.outputs.branch }}
     steps:
       - name: echo the given inputs
         run: echo "${{ inputs.name }}"
@@ -28,4 +28,4 @@ jobs:
         run: echo "${{ secrets.access-token }}"
       - name: output step
         id: step-3
-        run: echo 'data=${{github.action_ref}}' >> $GITHUB_OUTPUT
+        run: echo 'branch=${{github.action_ref}} >> $GITHUB_OUTPUT
