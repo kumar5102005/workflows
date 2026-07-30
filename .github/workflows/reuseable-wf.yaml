@@ -29,3 +29,4 @@ jobs:
       - name: output step
         id: step-3
         run: echo 'branch=${{github.action_repository}}' >> $GITHUB_OUTPUT
+      - run: echo ${{steps.step-3.outputs.branch}}
