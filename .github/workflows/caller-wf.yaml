@@ -16,7 +16,7 @@ jobs:
       access-token: ${{ secrets.GITHUB_TOKEN }}
   wf-output:
     needs: calling-reuseable-wf
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - run: echo ${{ needs.calling-reuseable-wf.outputs.output }}
 
