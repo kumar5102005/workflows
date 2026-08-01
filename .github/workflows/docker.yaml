@@ -16,5 +16,5 @@ jobs:
               run: |
                 node -v
                 ls -a
-                echo ${{ env.API_KEY }}
+                echo '${{ env.API_KEY }}''
               
