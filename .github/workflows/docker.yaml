@@ -17,4 +17,8 @@ jobs:
                 node -v
                 ls -a
                 echo $API_KEY
+            - name: container inside a step
+              uses: docker://node:18.16-alpine3.17
+              with:
+                args: -p 2+3
               
