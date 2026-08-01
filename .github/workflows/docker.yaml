@@ -30,6 +30,6 @@ jobs:
                 env: |
                 SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
                 SLACK_TITLE: "title goes here"
-                SLACK_MESSAGE: "message goes here"
+                SLACK_MESSAGE: "message goes here and there"
                 SLACK_COLOR: "#0000ff"
               
