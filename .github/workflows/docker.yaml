@@ -26,10 +26,10 @@ jobs:
                     cat simple.txt
             - name: send a slack msg
               uses: docker://technosophos/slack-notify
-              with:
-                env: |
+              env: 
                 SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
                 SLACK_TITLE: "title goes here"
                 SLACK_MESSAGE: "message goes here and there"
                 SLACK_COLOR: "#0000ff"
+            
               
