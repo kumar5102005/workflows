@@ -8,6 +8,7 @@ jobs:
             - name: checkout source code
               uses: actions/checkout@v4
             - name: log files
+              working-directory: ./.github/actions/hello
               run: ls -a
             - name: js-action trail
               id: greet
