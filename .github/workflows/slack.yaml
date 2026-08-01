@@ -1,0 +1,11 @@
+name: slack msg
+on:
+    workflow_run
+
+jobs:
+    slack_msg:
+        runs-on: ubuntu-latest
+        container: 
+            image: 
+
+        steps:
