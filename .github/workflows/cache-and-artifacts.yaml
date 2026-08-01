@@ -14,5 +14,7 @@ jobs:
         with:
           path: ~/.npm
           key: node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            node-
       - name: install dependicies
         run: npm install

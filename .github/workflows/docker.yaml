@@ -1,0 +1,20 @@
+name: running docker container inside a job
+on: 
+    workflow_dispatch
+
+jobs:
+    docker:
+        runs-on: ubuntu-latest
+        container: 
+            image: node:trixie-slim
+            env:
+                API_KEY: "sbgfhrwgfhs"
+            ports:
+                - 3000
+        steps:
+            - name: log node
+              run: |
+                node -v
+                ls -a
+                echo ${{ env.API_KEY }}
+              
