@@ -12,7 +12,7 @@ jobs:
               run: ls -a
             - name: js-action trail
               id: greet
-              uses: ./.github/actions/hello/js-action.yaml
+              uses: ./.github/actions/hello
               with:
                 who_to_greet: phani
             - name: log the greeting
