@@ -4,7 +4,7 @@
 /***/ 523:
 /***/ ((module) => {
 
-module.exports = eval("require")("./@actions/core");
+module.exports = eval("require")("@actions/core");
 
 
 /***/ }),
@@ -12,7 +12,7 @@ module.exports = eval("require")("./@actions/core");
 /***/ 215:
 /***/ ((module) => {
 
-module.exports = eval("require")("./@actions/github");
+module.exports = eval("require")("@actions/github");
 
 
 /***/ })
