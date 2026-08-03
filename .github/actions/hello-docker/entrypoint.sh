@@ -3,6 +3,6 @@ echo "::debug::Running entrypoint.sh"
 echo "hello $1"
 echo "INPUT_WHO_TO_GREET=$INPUT_WHO_TO_GREET"
 echo "HELLO=$HELLO"
-time = $(date)
+time=$(date)
 echo "time=$time" >> $GITHUB_OUTPUT
 echo "TIME=$time" >> $GITHUB_ENV
