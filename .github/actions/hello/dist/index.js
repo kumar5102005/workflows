@@ -1,18 +1,18 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 523:
+/***/ 761:
 /***/ ((module) => {
 
-module.exports = eval("require")("@actions/core");
+module.exports = eval("require")("./@actions/core");
 
 
 /***/ }),
 
-/***/ 215:
+/***/ 729:
 /***/ ((module) => {
 
-module.exports = eval("require")("@actions/github");
+module.exports = eval("require")("./@actions/github");
 
 
 /***/ })
@@ -56,8 +56,8 @@ module.exports = eval("require")("@actions/github");
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-const core = __nccwpck_require__(523);
-const github = __nccwpck_require__(215);
+const core = __nccwpck_require__(761);
+const github = __nccwpck_require__(729);
 
 try{
 
