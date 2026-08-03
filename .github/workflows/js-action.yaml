@@ -8,11 +8,11 @@ jobs:
             - name: checkout source code
               uses: actions/checkout@v4
             - name: log files
-              working-directory: ./.github/actions/hello
+              working-directory: ./.github/actions/hello-docker
               run: ls -a
             - name: js-action trail
               id: greet
-              uses: ./.github/actions/hello
+              uses: ./.github/actions/hello-docker
               with:
                 who_to_greet: phani
             - name: log the greeting
