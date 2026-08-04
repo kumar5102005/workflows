@@ -1,0 +1,46 @@
+name: random joke
+author: phani kumar
+description: Generating a random joke and sending it as a slack msg
+inputs:
+  slack_username: 
+    description: slack username
+  upload-joke:
+    description: either to upload joke or not
+  slack_webhook:
+    description: slack webhook to upload joke  
+
+outputs:
+  random_joke:
+    description: 'randome joke'
+    value: ${{ steps.joke.outputs.random_joke }}
+  
+runs:
+  # For more on composite actions, see:
+  # https://docs.github.com/en/actions/sharing-automations/creating-actions/creating-a-composite-action
+  using: composite
+  steps:
+    - name: Generating a random joke
+      id: joke
+      shell: bash
+      run: |
+        EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+        echo "random_joke<<$EOF" >> "$GITHUB_OUTPUT"
+        curl -s https://icanhazdadjoke.com/ >> "$GITHUB_OUTPUT"
+        echo " " >> "$GITHUB_OUTPUT"
+        echo "$EOF" >> "$GITHUB_OUTPUT"
+    - name: Generate a joke file
+      shell: bash
+      run: echo "${{ steps.joke.outputs.random_joke }}" > joke.txt
+      if: inputs.upload-joke
+    - name: creating a artifact
+      uses: actions/upload-artifact@v4
+    - name: sending a slack msg
+      if: inputs.upload-joke
+      uses: docker://technosophos/slack-notify
+      env: 
+        SLACK_WEBHOOK: ${{ inputs.slack_webhook }}
+        SLACK_TITLE: "random joke"
+        SLACK_MESSAGE: ${{ inputs.slack_username && format('{0}{1}{2}', '@', inputs.slack_username, steps.joke.outputs.random_joke) || steps.joke.outputs.random_joke}}
+        SLACK_COLOR: "#0000ff"
+
+  

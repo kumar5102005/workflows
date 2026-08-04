@@ -7,15 +7,8 @@ jobs:
         steps:
             - name: checkout source code
               uses: actions/checkout@v4
-            - name: log files
-              working-directory: ./.github/actions/hello-docker
-              run: ls -a
-            - name: js-action trail
-              id: greet
-              uses: ./.github/actions/hello-docker
-              with:
-                who_to_greet: phani
-            - name: log the greeting
-              run: echo "${{ steps.greet.outputs.time }}"
-            - name: log the env var
-              run: echo $TIME
+            - name: generate joke and send to slack
+              uses: ./.github/actions/slack-joke
+              id: slack_joke
+            - name: output of slack joke
+              run: echo ${{ steps.slack_joke.outputs }}
