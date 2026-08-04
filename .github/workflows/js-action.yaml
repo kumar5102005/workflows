@@ -9,6 +9,10 @@ jobs:
               uses: actions/checkout@v4
             - name: generate joke and send to slack
               uses: ./.github/actions/slack-joke
+              with:
+                slack_username: phanivangali
+                upload_data: true
+                slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
               id: slack_joke
             - name: output of slack joke
               run: echo ${{ steps.slack_joke.outputs }}
