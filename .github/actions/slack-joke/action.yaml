@@ -34,6 +34,9 @@ runs:
       if: inputs.upload-joke
     - name: creating a artifact
       uses: actions/upload-artifact@v4
+      with: 
+        path: joke.txt
+        name: slack joke
     - name: sending a slack msg
       if: inputs.upload-joke
       uses: docker://technosophos/slack-notify
