@@ -11,8 +11,8 @@ jobs:
               uses: ./.github/actions/slack-joke
               with:
                 slack_username: phanivangali
-                upload_data: true
+                upload_joke: true
                 slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
               id: slack_joke
             - name: output of slack joke
-              run: echo ${{ steps.slack_joke.outputs }}
+              run: echo ${{ steps.slack_joke.outputs.random_joke }}
