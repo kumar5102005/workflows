@@ -9,7 +9,7 @@ jobs:
               uses: actions/checkout@v4
             - name: using javascript action
               id: action-output
-              uses: kumar5102005/open-issues-action@main
+              uses: kumar5102005/open-issues-action@master
               with: 
                 token: ${{ secrets.GITHUB_TOKEN }}
                 title: "this is an new issuse"
