@@ -16,6 +16,7 @@ jobs:
               with: 
                 token: ${{ secrets.GITHUB_TOKEN }}
                 title: "this is an new issuse"
+                name: ":strawberry:"
                 body: "this is the body of the issuse"
                 assignees: ""
             - name: output of the javascript action
